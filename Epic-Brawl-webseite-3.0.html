@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Epic Brawl – Offizielle Webseite</title>
+  <style>
+    /* Allgemeines Styling */
+    body {
+      margin: 0;
+      padding: 0;
+      background: #1e1e1e;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    header {
+      background: #222;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img.logo {
+      height: 60px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    /* Navigation (Tabs) */
+    nav {
+      background: #333;
+      overflow: hidden;
+    }
+    nav a {
+      float: left;
+      display: block;
+      color: #ddd;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background-color: #555;
+      color: #fff;
+    }
+    nav a.active {
+      background-color: #00aaff;
+      color: #fff;
+    }
+    /* Tab-Inhalte */
+    .tab-content {
+      display: none;
+      padding: 20px;
+      background: #1e1e1e;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    /* Sections */
+    .section {
+      margin-bottom: 30px;
+      padding: 20px;
+      background: #292929;
+      border-radius: 8px;
+    }
+    .section h2 {
+      margin-top: 0;
+    }
+    /* Formulare */
+    .form-container {
+      max-width: 400px;
+      margin: 20px auto;
+      background: #333;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .form-container input[type="text"],
+    .form-container input[type="email"],
+    .form-container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #00aaff;
+      color: #fff;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    /* Countdown Timer Styles */
+    .timer {
+      text-align: center;
+      font-size: 2.5em;
+      margin: 20px 0;
+    }
+    /* Footer */
+    footer {
+      background: #222;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header mit Logo und Titel -->
+  <header>
+    <div>
+      <img class="logo" src="https://via.placeholder.com/150x60?text=Epic+Brawl" alt="Epic Brawl Logo">
+    </div>
+    <h1>Epic Brawl</h1>
+  </header>
+  
+  <!-- Navigation (Tabs) -->
+  <nav>
+    <a class="tablink active" onclick="openTab(event, 'Startseite')">Startseite</a>
+    <a class="tablink" onclick="openTab(event, 'News')">Neuigkeiten</a>
+    <a class="tablink" onclick="openTab(event, 'Countdown')">Beta Countdown</a>
+    <a class="tablink" onclick="openTab(event, 'Trailer')">Trailer Countdown</a>
+    <a class="tablink" onclick="openTab(event, 'Download')">Download</a>
+    <a class="tablink" onclick="openTab(event, 'Account')">Login / Registrierung</a>
+    <a class="tablink" onclick="openTab(event, 'Specials')">Specials</a>
+  </nav>
+  
+  <!-- Tab-Inhalte -->
+  <div id="Startseite" class="tab-content active">
+    <div class="section">
+      <h2>Willkommen bei Epic Brawl!</h2>
+      <p>Erlebe epische Kämpfe in einer atemberaubenden Arena. Schließe dich der Community an und kämpfe um Ruhm und Ehre!</p>
+    </div>
+  </div>
+  
+  <div id="News" class="tab-content">
+    <div class="section">
+      <h2>Neuigkeiten</h2>
+      <p>Hier findest du alle aktuellen Updates, Events und Ankündigungen rund um Epic Brawl.</p>
+    </div>
+  </div>
+  
+  <div id="Countdown" class="tab-content">
+    <div class="section">
+      <h2>Beta-Countdown</h2>
+      <div class="timer" id="betaCountdown">00:00:00</div>
+    </div>
+  </div>
+  
+  <div id="Trailer" class="tab-content">
+    <div class="section">
+      <h2>Trailer-Countdown</h2>
+      <div class="timer" id="trailerCountdown">00:00:00</div>
+      <p>Der epische Trailer erscheint bald – sei gespannt!</p>
+    </div>
+  </div>
+  
+  <div id="Download" class="tab-content">
+    <div class="section">
+      <h2>Download</h2>
+      <p>Die Beta von Epic Brawl ist jetzt verfügbar! Lade die Beta herunter und teste die neuesten Features.</p>
+      <a href="#" style="display:inline-block; padding:10px 20px; background:#00aaff; color:#fff; text-decoration:none; border-radius:5px;">Beta herunterladen</a>
+    </div>
+  </div>
+  
+  <div id="Account" class="tab-content">
+    <div class="section">
+      <h2>Login</h2>
+      <div class="form-container">
+        <form id="loginForm">
+          <input type="text" placeholder="Benutzername" required>
+          <input type="password" placeholder="Passwort" required>
+          <button type="submit">Einloggen</button>
+        </form>
+      </div>
+      <h2>Registrierung</h2>
+      <div class="form-container">
+        <form id="registerForm">
+          <input type="text" placeholder="Benutzername" required>
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Passwort" required>
+          <input type="password" placeholder="Passwort bestätigen" required>
+          <button type="submit">Registrieren</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <div id="Specials" class="tab-content">
+    <div class="section">
+      <h2>Specials & Exklusive Features</h2>
+      <p>Entdecke besondere Events, exklusive Belohnungen und Community-Specials in Epic Brawl:</p>
+      <ul>
+        <li><strong>Event der Woche:</strong> Gewinne doppelte Trophäen und exklusive Skins!</li>
+        <li><strong>Community Challenge:</strong> Tritt gegen andere Spieler an und sammle Bonus-Münzen.</li>
+        <li><strong>Exklusive Giveaways:</strong> Registrierte User erhalten Zugang zu speziellen Beta-Features.</li>
+        <li><strong>Admin Special:</strong> Unsere Admins haben einzigartige Brawler und Skins, die nur sie tragen – und du kannst an besonderen Events teilnehmen!</li>
+      </ul>
+    </div>
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Epic Brawl. Alle Rechte vorbehalten.</p>
+  </footer>
+  
+  <!-- JavaScript für Tab-Wechsel, Countdown und Registrierung/Login -->
+  <script>
+    // Funktion zum Wechseln zwischen Tabs
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+        tabcontent[i].classList.remove("active");
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+      }
+      document.getElementById(tabName).style.display = "block";
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+    
+    // Countdown Timer für Beta
+    const betaCountdownElement = document.getElementById('betaCountdown');
+    const betaTargetDate = new Date("Jul 1, 2025 00:00:00").getTime();
+    
+    function updateBetaCountdown() {
+      const now = new Date().getTime();
+      const distance = betaTargetDate - now;
+      if (distance < 0) {
+        betaCountdownElement.innerHTML = "Beta gestartet!";
+        return;
+      }
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      betaCountdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+    }
+    setInterval(updateBetaCountdown, 1000);
+    
+    // Countdown Timer für Trailer (Beispiel: Trailer Release am 15. Juni 2025)
+    const trailerCountdownElement = document.getElementById('trailerCountdown');
+    const trailerTargetDate = new Date("Jun 15, 2025 00:00:00").getTime();
+    
+    function updateTrailerCountdown() {
+      const now = new Date().getTime();
+      const distance = trailerTargetDate - now;
+      if (distance < 0) {
+        trailerCountdownElement.innerHTML = "Trailer veröffentlicht!";
+        return;
+      }
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      trailerCountdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+    }
+    setInterval(updateTrailerCountdown, 1000);
+    
+    // Registrierung (Speicherung in localStorage)
+    document.getElementById("registerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const registerInputs = this.querySelectorAll("input");
+      const username = registerInputs[0].value.trim();
+      const email = registerInputs[1].value.trim();
+      const password = registerInputs[2].value;
+      const confirmPassword = registerInputs[3].value;
+      
+      if (password !== confirmPassword) {
+        alert("Passwörter stimmen nicht überein.");
+        return;
+      }
+      
+      if (localStorage.getItem("user_" + username)) {
+        alert("Benutzername existiert bereits. Bitte wähle einen anderen.");
+        return;
+      }
+      
+      // Speichern der Benutzerdaten als JSON (Hinweis: Für echte Anwendungen sollten Passwörter sicher gehasht werden!)
+      const userData = { username, email, password };
+      localStorage.setItem("user_" + username, JSON.stringify(userData));
+      alert("Registrierung erfolgreich! Du kannst dich jetzt einloggen.");
+      this.reset();
+    });
+    
+    // Login (Überprüfung der in localStorage gespeicherten Daten)
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const loginInputs = this.querySelectorAll("input");
+      const username = loginInputs[0].value.trim();
+      const password = loginInputs[1].value;
+      
+      const storedUser = localStorage.getItem("user_" + username);
+      if (!storedUser) {
+        alert("Benutzer nicht gefunden. Bitte registriere dich zuerst.");
+        return;
+      }
+      
+      const userData = JSON.parse(storedUser);
+      if (userData.password !== password) {
+        alert("Falsches Passwort. Bitte versuche es erneut.");
+        return;
+      }
+      
+      alert("Login erfolgreich! Willkommen, " + username + "!");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
